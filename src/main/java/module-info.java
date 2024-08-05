@@ -3,7 +3,10 @@ module com.crudmvc.javafx_mvc {
     requires javafx.fxml;
     requires java.sql;
 
+    opens com.crudmvc.Models.domain to javafx.base, javafx.fxml;
+    opens com.crudmvc.Controllers to javafx.fxml;
 
-    opens com.crudmvc to javafx.fxml;
-    exports com.crudmvc;
+    exports com.crudmvc.Models.domain;
+    exports com.crudmvc.Controllers;
+    exports com.crudmvc to javafx.graphics;
 }

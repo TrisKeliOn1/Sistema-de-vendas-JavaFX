@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.crudmvc.Controllers.FXMLVBoxMainController">
     <children>
         <MenuBar>
             <menus>
                 <Menu mnemonicParsing="false" text="Cadastros">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Categorias" />
-                        <MenuItem fx:id="menuItemCadastrosCliente" mnemonicParsing="false" text="Clientes " />
+                        <MenuItem fx:id="menuItemCadastrosCliente" mnemonicParsing="false" onAction="#handleMenuItemCadastrosClientes" text="Clientes " />
                         <MenuItem mnemonicParsing="false" text="Produtos" />
                     </items>
                 </Menu>
@@ -31,7 +34,6 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <AnchorPane fx:id="anchorPane" prefHeight="375.0" prefWidth="600.0" />
+        <AnchorPane fx:id="anchorPane" prefHeight="378.0" prefWidth="600.0" />
     </children>
 </VBox>
-
