@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="404.0" prefWidth="499.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.crudmvc.Controllers.FXMLAnchorPaneProcessosVendasDialogController">
+   <children>
+      <GridPane layoutX="75.0" layoutY="55.0" prefHeight="278.0" prefWidth="349.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="74.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="275.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="146.0" minHeight="10.0" prefHeight="141.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Cliente" />
+            <Label text="Data" GridPane.rowIndex="1" />
+            <Label text="Pago" GridPane.rowIndex="2" />
+            <Label text="Produtos" GridPane.rowIndex="3" />
+            <Label text="Itens" GridPane.rowIndex="4" />
+            <Label text="Valor" GridPane.rowIndex="5" />
+            <ComboBox fx:id="comboBoxVendaCliente" prefHeight="25.0" prefWidth="174.0" promptText="Selecione o Cliente ..." GridPane.columnIndex="1" />
+            <DatePicker fx:id="datePickerVendaData" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <CheckBox fx:id="checkBoxVendaPago" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TableView fx:id="tableViewItensDeVenda" prefHeight="126.0" prefWidth="251.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+              <columns>
+                <TableColumn fx:id="tableColumnItemDeVendaProduto" prefWidth="120.0" text="Produto" />
+                <TableColumn fx:id="tableColumnItemDeVendaQuantidade" prefWidth="71.0" text="Quantidade" />
+                  <TableColumn fx:id="tableColumnItemDeVendaValor" prefWidth="83.0" text="Valor" />
+              </columns>
+            </TableView>
+            <TextField fx:id="textFieldVendaValor" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <HBox prefHeight="36.0" prefWidth="256.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <ComboBox fx:id="comboBoxVendaProduto" prefHeight="25.0" prefWidth="165.0" promptText="Selecione o Produto ..." />
+                  <TextField fx:id="textFieldVendaItemDeVendaQuantidade" prefHeight="25.0" prefWidth="41.0" />
+                  <Button fx:id="buttonAdicionar" mnemonicParsing="false" onAction="#handleButtonAdicionar" text="Adicionar" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <Button fx:id="buttonConfirmar" layoutX="250.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleButtonConfirmar" text="Confirmar" />
+      <Button fx:id="buttonCancelar" layoutX="329.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleButtonCancelar" text="Cancelar" />
+   </children>
+</AnchorPane>
